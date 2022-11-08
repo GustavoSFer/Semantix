@@ -7,13 +7,6 @@ const getAll = async () => {
   return users;
 };
 
-const createProvider = async (email, name, password, grupo, empresa, cnpj) => {
-  const providerAdd = await model.create({ email, name, password, grupo, empresa, cnpj });
-
-  return providerAdd;
-};
-
 module.exports = {
   getAll,
-  createProvider,
 };
