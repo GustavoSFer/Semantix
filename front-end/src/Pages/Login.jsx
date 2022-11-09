@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
+import loginUser from '../Services';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [msgErro, setMsgErro] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     console.log(setMsgErro);
+    await loginUser('/', { email: 'gustavo@gmail.com', password: 'gustavo123' });
   };
 
   const register = {
@@ -24,7 +26,7 @@ function Login() {
           <h1 className="fw-bolder">Faça seu Login na Plataforma</h1>
         </div>
         <div className="col border border-primary">
-          <form>
+          <div>
             <Input
               type="text"
               name="E-mail"
@@ -39,7 +41,7 @@ function Login() {
             />
             <Button click={handleClick} sty="w-100" dataTestId="btn-entrar">Entrar</Button>
             { msgErro && <p className="text-danger">E-mail ou senha incorreto!</p> }
-          </form>
+          </div>
           <p className="m-3">
             Não possui cadastro?
             <Link to="/cadastro" style={register}>Registre-se</Link>

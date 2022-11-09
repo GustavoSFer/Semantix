@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use('/users', route);
+app.use('/', route);
 app.use(error);
 
 app.listen(PORT, () => {

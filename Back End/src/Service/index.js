@@ -10,6 +10,13 @@ const login = async (email, password) => {
   return user;
 };
 
+const getAll = async (email, password) => {
+  const users = await model.getAll();
+
+  return users;
+};
+
 module.exports = {
   login,
+  getAll,
 };
