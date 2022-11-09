@@ -6,7 +6,7 @@ const cooker = require('../Controller/cookerController');
 const route = Router();
 
 route.get('/', controller.getAll);
-route.post('/fornecedor', provider.createProvider);
+route.post('/provider', provider.createProvider);
 route.post('/cooker', cooker.createCooker);
 
 module.exports = route;
