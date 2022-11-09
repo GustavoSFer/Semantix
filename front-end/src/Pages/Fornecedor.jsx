@@ -1,17 +1,31 @@
 import React, { useState } from 'react';
-// import MyContext from '../MyContext/MyContext';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
+import {
+  isValidName,
+  isValidCnpj,
+} from '../Util/Validacao';
 
 function Fornecedor() {
-//   const {
-//     email, setEmail,
-//     name, setName,
-//   } = useContext(MyContext);
   const [empresa, setEmpresa] = useState('');
   const [cnpj, setCnpj] = useState('');
+  const [msgErro, setMsgErro] = useState(false);
+
+  const cadastrar = async () => {
+
+  };
 
   const handleClick = () => {
+    if (
+      isValidName(empresa)
+      && isValidCnpj(cnpj)
+    ) {
+      setMsgErro(false);
+      console.log('ooook');
+      cadastrar();
+    } else {
+      setMsgErro(true);
+    }
   };
 
   return (
@@ -33,11 +47,14 @@ function Fornecedor() {
 
             <Input
               type="text"
-              name="CNPJ da sua empresa"
+              name="CNPJ da sua empresa (ex: 00.000.000/0000-00)"
               handleChange={(e) => setCnpj(e.target.value)}
               value={cnpj}
             />
-
+            {
+              msgErro
+                && <p className="text-danger">Dados incorreto! Verificar todos os campos.</p>
+            }
             <Button click={handleClick} sty="w-100" dataTestId="btn-entrar">Cadastrar</Button>
           </div>
         </div>
