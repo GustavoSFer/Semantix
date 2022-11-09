@@ -15,10 +15,7 @@ const schema = new mongoose.Schema({
   empresa: { type: String, required: false },
   cnpj: { type: String, required: false },
   cozinheiro: { type: String, required: false },
-  suprimentos: { type: String, required: false },
-  arroz: { type: String, required: false },
-  feijao: { type: String, required: false },
-  macarrao: { type: String, required: false },
+  suprimentos: { type: Array, required: false },
 })
 
 const model = mongoose.model('Semantix', schema);

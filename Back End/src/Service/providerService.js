@@ -11,7 +11,7 @@ const createProvider = async (email, name, password, grupo, empresa, cnpj) => {
   
     const providerAdd = await model.createProvider(email, name, hashPassword, grupo, empresa, cnpj);
     
-    const token = generateToken({ email, name, grupo, empresa, cnpj });
+    const token = generateToken({ email, name, grupo });
     delete providerAdd.password;
     return {...providerAdd._doc, token};
 
