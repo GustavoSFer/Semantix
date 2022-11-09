@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CreateUser() {
+function Login() {
   return (
     <div>
       pagina de criar usuario;
@@ -9,4 +9,4 @@ function CreateUser() {
   );
 }
 
-export default CreateUser;
+export default Login;

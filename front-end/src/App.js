@@ -1,11 +1,15 @@
-import { Routes, Route } from 'react-router-dom';
-import CreateUser from './Pages/CreateUser';
+import Routers from './Routes';
+import MyContext from './MyContext/MyContext';
+
 
 function App() {
+
+  const contextValue = { };
+
   return (
-    <Routes>
-      <Route path="/" element={<CreateUser />} />
-    </Routes>
+    <MyContext.Provider value={contextValue}>
+      <Routers />
+    </MyContext.Provider>
   );
 }
 
