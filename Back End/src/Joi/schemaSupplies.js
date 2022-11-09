@@ -18,7 +18,7 @@ const schemaSupplies = Joi.object({
     'any.required': 'Grupo is required',
   }),
   suprimentos: Joi.string().required().messages({
-    'string.base': 'Suprimentos is need number',
+    'string.base': 'Suprimentos is need string',
     'any.required': 'Suprimentos is required',
   })
 });
