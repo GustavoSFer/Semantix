@@ -1,18 +1,29 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
-import {
-  isValidName,
-  isValidCnpj,
-} from '../Util/Validacao';
+import { createUserProvider } from '../Services';
+import MyContext from '../MyContext/MyContext';
+import { isValidName, isValidCnpj } from '../Util/Validacao';
 
 function Fornecedor() {
+  const history = useNavigate();
   const [empresa, setEmpresa] = useState('');
   const [cnpj, setCnpj] = useState('');
   const [msgErro, setMsgErro] = useState(false);
+  const {
+    email, name, password, grupo, clearForm,
+  } = useContext(MyContext);
 
   const cadastrar = async () => {
-
+    const body = {
+      email, name, password, grupo, empresa, cnpj,
+    };
+    await createUserProvider('/provider', body);
+    clearForm();
+    setEmpresa('');
+    setCnpj('');
+    history('/home');
   };
 
   const handleClick = () => {
@@ -21,7 +32,6 @@ function Fornecedor() {
       && isValidCnpj(cnpj)
     ) {
       setMsgErro(false);
-      console.log('ooook');
       cadastrar();
     } else {
       setMsgErro(true);

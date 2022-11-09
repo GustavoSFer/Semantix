@@ -12,6 +12,14 @@ function App() {
   const [confirmePassword, setConfirmePassword] = useState('');
   const [grupo, setGrupo] = useState('');
 
+  const clearForm = () => {
+    setEmail('');
+    setName('');
+    setPassword('');
+    setConfirmePassword('');
+    setGrupo('');
+  };
+
   const contextValue = {
     MIN_PASSWORD_LANGTH,
     email, setEmail,
@@ -19,6 +27,7 @@ function App() {
     password, setPassword,
     confirmePassword, setConfirmePassword,
     grupo, setGrupo,
+    clearForm,
   };
 
   return (

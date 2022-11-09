@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
-import loginUser from '../Services';
+import { loginUser } from '../Services';
 
 function Login() {
   const [email, setEmail] = useState('');

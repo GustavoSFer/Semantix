@@ -9,4 +9,12 @@ const loginUser = async (endpoint, body) => {
   return data;
 };
 
-export default loginUser;
+const createUserProvider = async (endpoint, body) => {
+  const { data } = await axios.post((baseURL + endpoint), body);
+  return data;
+};
+
+export {
+  loginUser,
+  createUserProvider,
+};
