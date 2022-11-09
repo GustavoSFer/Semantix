@@ -1,10 +1,11 @@
 import Routers from './Routes';
 import MyContext from './MyContext/MyContext';
 import { useState } from 'react';
+import './App.css';
 
 
 function App() {
-  const MIN_PASSWORD_LANGTH = 6;
+  const MIN_PASSWORD_LANGTH = 5;
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');

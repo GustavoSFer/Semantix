@@ -1,12 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
 import MyContext from '../MyContext/MyContext';
+import {
+  isValidEmail,
+  isValidPassword,
+  isValidName,
+  confirmPassword,
+  isValidGroup,
+} from '../Util/Validacao';
 
 function Cadastro() {
   const history = useNavigate();
   const {
+    MIN_PASSWORD_LANGTH,
     email, setEmail,
     name, setName,
     password, setPassword,
@@ -14,8 +22,21 @@ function Cadastro() {
     grupo, setGrupo,
   } = useContext(MyContext);
 
+  const [msgErro, setMsgErro] = useState(false);
+
   const handleClick = () => {
-    history(`/${grupo}`);
+    if (
+      isValidEmail(email)
+      && isValidPassword(password, MIN_PASSWORD_LANGTH)
+      && isValidName(name)
+      && confirmPassword(password, confirmePassword)
+      && isValidGroup(grupo)
+    ) {
+      setMsgErro(false);
+      history(`/${grupo}`);
+    } else {
+      setMsgErro(true);
+    }
   };
 
   return (
@@ -48,6 +69,9 @@ function Cadastro() {
               handleChange={(e) => setPassword(e.target.value)}
               value={password}
             />
+            <p className="min-password text-end">
+              {`Caracteres minimo para senha: ${MIN_PASSWORD_LANGTH}`}
+            </p>
 
             <Input
               type="password"
@@ -56,12 +80,17 @@ function Cadastro() {
               value={confirmePassword}
             />
 
-            <select className="form-select mt-3" onChange={(e) => setGrupo(e.target.value)}>
+            <select className="form-select mt-3" value={grupo} onChange={(e) => setGrupo(e.target.value)}>
               <option defaultValue="selecione">Seu grupo</option>
               <option value="fornecedor">Fornecedor</option>
               <option value="cozinheiro">Cozinheiro</option>
               <option value="suprimentos">Suprimentos</option>
             </select>
+
+            {
+              msgErro
+                && <p className="text-danger">Dados incorreto! Verificar todos os campos.</p>
+            }
 
             <Button click={handleClick} sty="w-100" dataTestId="btn-entrar">PRÓXIMO</Button>
           </div>
