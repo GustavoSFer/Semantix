@@ -1,12 +1,11 @@
 const model = require('../ConnectionMongo');
 
-const getAll = async () => {
-  console.log('model');
-  const users = await model.find();
+const login = async (email, password) => {
+  const user = await model.findOne({ email, password });
 
-  return users;
+  return user;
 };
 
 module.exports = {
-  getAll,
+  login,
 };
