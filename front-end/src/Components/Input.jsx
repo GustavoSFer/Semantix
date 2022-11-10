@@ -13,7 +13,7 @@ function Input({
         data-testid={name}
         onChange={handleChange}
         value={value}
-        className={`form-control ${sty}`}
+        className={`form-control ver ${sty}`}
         placeholder={name}
       />
     </label>

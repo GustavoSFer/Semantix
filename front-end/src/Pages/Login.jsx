@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
 import { loginUser } from '../Services';
+import logoEmpresa from '../imagens/logo-empresa.png';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -11,21 +12,23 @@ function Login() {
 
   const handleClick = async () => {
     console.log(setMsgErro);
-    await loginUser('/', { email: 'gustavo@gmail.com', password: 'gustavo123' });
+    const body = { email, password };
+    const login = await loginUser('/loginUser', body);
+    console.log(login);
   };
 
-  const register = {
-    marginLeft: '15px',
+  const logo = {
+    width: '200px',
   };
 
   return (
-    <main className="container text-center position-absolute top-50 start-50 translate-middle">
-      <div className="row row-cols-1 row-cols-lg-2 m-2">
-        <div className="col border border-success">
-          <img src="#" alt="logo da empresa" />
-          <h1 className="fw-bolder">Faça seu Login na Plataforma</h1>
+    <main className="text-center morgin-auto">
+      <div className="row row-cols-1 row-cols-lg-2 m-2 ">
+        <div className="text-start fundo">
+          <img src={logoEmpresa} alt="logo da empresa" style={logo} />
+          <h1 className="fw-bolder text-white">Faça seu Login na Plataforma</h1>
         </div>
-        <div className="col border border-primary">
+        <div className="col color-form">
           <div>
             <Input
               type="text"
@@ -42,9 +45,9 @@ function Login() {
             <Button click={handleClick} sty="w-100" dataTestId="btn-entrar">Entrar</Button>
             { msgErro && <p className="text-danger">E-mail ou senha incorreto!</p> }
           </div>
-          <p className="m-3">
-            Não possui cadastro?
-            <Link to="/cadastro" style={register}>Registre-se</Link>
+          <p className="m-3 text-white">
+            Não tem uma conta?
+            <Link to="/cadastro" className="register">Registre-se</Link>
           </p>
         </div>
       </div>
