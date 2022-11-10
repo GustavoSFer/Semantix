@@ -15,6 +15,7 @@ const schema = new mongoose.Schema({
   empresa: { type: String, required: false },
   cnpj: { type: String, required: false },
   cozinheiro: { type: String, required: false },
+  cri: { type: Number, required: false },
   suprimentos: { type: Array, required: false },
 })
 
