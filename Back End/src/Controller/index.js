@@ -2,6 +2,7 @@ const service = require('../Service');
 
 const login = async (req, res, next) => {
   const { email, password } = req.body
+  console.log(req.body);
   const user = await service.login(email, password);
   if (user.code) return next(user)
 
