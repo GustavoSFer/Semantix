@@ -20,5 +20,10 @@ describe('Controller', () => {
       expect(response.status.calledWith(200)).to.be.equal(true);
       Sinon.restore();
     });
+    it('Quando nao tiver dados - Deve retornar um array vazio', async () => {
+      Sinon.stub(service, 'getAll').resolves([]);
+      await controller.getAll(request, response);
+      expect(response.json.calledWith([])).to.be.equal(true);
+    });  
   });
 });
