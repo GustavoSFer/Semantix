@@ -1,18 +1,41 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../Components/Button';
+import MyContext from '../MyContext/MyContext';
+import { createUser } from '../Services';
+import MensagemErro from '../Components/MensagemErro';
 
 function Suprimentos() {
-  //   const {
-//     email, setEmail,
-//     name, setName,
-//   } = useContext(MyContext);
+  const history = useNavigate();
+  const {
+    email, name, password, grupo, clearForm, msgErro, setMsgErro,
+  } = useContext(MyContext);
+
   const optionSuprimentos = ['Selecione os suprimentos', 'Arroz', 'Feijão', 'Macarrão'];
   const [suprimento1, setSuprimento1] = useState('');
   const [suprimento2, setSuprimento2] = useState('');
   const [suprimento3, setSuprimento3] = useState('');
 
+  const cadastrar = async () => {
+    const suprimentos = `${suprimento1} ${suprimento2} ${suprimento3}`;
+    const body = {
+      email, name, password, grupo, suprimentos,
+    };
+    await createUser('/supplies', body);
+    clearForm();
+    setSuprimento1('');
+    setSuprimento2('');
+    setSuprimento3('');
+    history('/home');
+  };
+
   const handleClick = () => {
-    console.log(suprimento3);
+    if (suprimento1) {
+      setMsgErro(false);
+      cadastrar();
+    } else {
+      setMsgErro(true);
+    }
   };
 
   // const removeItem = (valor) => {
@@ -56,6 +79,7 @@ function Suprimentos() {
               )
             }
 
+            { msgErro && <MensagemErro /> }
             <Button click={handleClick} sty="w-100" dataTestId="btn-entrar">Cadastrar</Button>
           </div>
         </div>
