@@ -1,5 +1,6 @@
 import React from 'react';
 import { screen, render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from '../App';
 
 /* globals describe, expect, it */
@@ -21,5 +22,20 @@ describe('Verificando tela de login, se os elementos estão na tela', () => {
     render(<App />);
     const buttons = screen.getAllByRole('button');
     expect(buttons).toHaveLength(1);
+  });
+});
+
+describe('Verificando comportamentos na tela de "login"', () => {
+  it(`Verificando se quando digitado o email e senha 
+  realmente aparece o que foi escrito`, () => {
+    render(<App />);
+    const inputEmail = screen.getByTestId('E-mail');
+    const inputPassword = screen.getByTestId('Senha');
+
+    userEvent.type(inputEmail, 'gustavo@gmail.com');
+    userEvent.type(inputPassword, '3432gustavo');
+    // Verificando se o valor esta correto.
+    expect(inputEmail).toHaveValue('gustavo@gmail.com');
+    expect(inputPassword).toHaveValue('3432gustavo');
   });
 });
