@@ -83,9 +83,9 @@ function Cadastro() {
 
             <select className="form-select mt-3 ver" value={grupo} onChange={(e) => setGrupo(e.target.value)}>
               <option defaultValue="selecione">Seu grupo</option>
-              <option value="fornecedor">Fornecedor</option>
-              <option value="cozinheiro">Cozinheiro</option>
-              <option value="suprimentos">Suprimentos</option>
+              <option value="Fornecedor">Fornecedor</option>
+              <option value="Cozinheiro">Cozinheiro</option>
+              <option value="Suprimentos">Suprimentos</option>
             </select>
 
             {

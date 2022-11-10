@@ -22,7 +22,6 @@ function Home() {
   };
 
   const handleClick = () => {
-    console.log('clicado');
     localStorage.removeItem('user');
     history('/');
   };
@@ -30,7 +29,7 @@ function Home() {
   const listagem = (grupo) => {
     if (grupo === 'fornecedor') {
       return (
-        <table className="table table-dark border border-info">
+        <table className="table table-dark border border-info rounded">
           <thead>
             <tr className="table-active">
               <td>Nome</td>
@@ -50,7 +49,7 @@ function Home() {
     }
     if (grupo === 'cozinheiro') {
       return (
-        <table className="table table-dark border border-info">
+        <table className="table table-dark border border-info rounded">
           <thead>
             <tr className="table-active">
               <td>Nome</td>
@@ -68,7 +67,7 @@ function Home() {
       );
     }
     return (
-      <table className="table table-dark border border-info">
+      <table className="table table-dark border border-info rounded">
         <thead>
           <tr className="table-active">
             <td>Nome</td>
@@ -91,9 +90,9 @@ function Home() {
   }, []);
 
   return (
-    <div className="home p-4">
+    <div className="home">
       <Header name={nameUser} grupo={nameGroup} />
-      <main>
+      <main className="p-4">
         <h1>Listagem de Usuários</h1>
         { data && listagem(nameGroup)}
 

@@ -85,10 +85,11 @@ option {
 header {
   height: 100px;
   background: #121214;
-  border: 1px solid red;
 }
 
 .home {
+  width: 100vw;
+  height: 100vh;
   background-color: #1f1e23;
 }
 

@@ -2,7 +2,6 @@ const service = require('../Service');
 
 const login = async (req, res, next) => {
   const { email, password } = req.body
-  console.log(req.body);
   const user = await service.login(email, password);
   if (user.code) return next(user)
 
@@ -14,7 +13,15 @@ const getAll = async (req, res) => {
   return res.status(200).json(users);
 };
 
+const getAllGrupo = async (req, res) => {
+  const { grupo } = req.params;
+  const findAllGrupo = await service.getAllGrupo(grupo);
+
+  return res.status(200).json(findAllGrupo)
+};
+
 module.exports = {
   login,
   getAll,
+  getAllGrupo,
 }

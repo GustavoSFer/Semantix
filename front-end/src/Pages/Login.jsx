@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
 import { loginUser } from '../Services';
 import logoEmpresa from '../imagens/logo-empresa.png';
 
 function Login() {
+  const history = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [msgErro, setMsgErro] = useState(false);
 
   const handleClick = async () => {
-    console.log(setMsgErro);
-    const body = { email, password };
-    const login = await loginUser('/loginUser', body);
-    console.log(login);
+    try {
+      const body = { email, password };
+      const login = await loginUser('/loginUser', body);
+      setMsgErro('');
+      localStorage.setItem('user', JSON.stringify(login));
+      history('/home');
+    } catch (error) {
+      setMsgErro(error);
+    }
   };
 
   const logo = {
