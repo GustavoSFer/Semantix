@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../Components/Button';
+import AboutData from '../Components/AboutData';
 import MyContext from '../MyContext/MyContext';
 import { createUser } from '../Services';
 import MensagemErro from '../Components/MensagemErro';
@@ -45,7 +46,7 @@ function Suprimentos() {
 
   return (
     <main className="text-center morgin-auto">
-      <div className="row row-cols-1 row-cols-lg-2 m-2">
+      <div className="row row-cols-1 row-cols-lg-2 m-2 width">
         <div className="col">
           <p className="text-start">
             Cadastro de Usuário -
@@ -84,9 +85,8 @@ function Suprimentos() {
           </div>
         </div>
 
-        <div className="col border border-success">
-          <img src="#" alt="logo da empresa" />
-          <h1 className="fw-bolder">Crie seu Login na Plataforma</h1>
+        <div className="col">
+          <AboutData />
         </div>
       </div>
     </main>

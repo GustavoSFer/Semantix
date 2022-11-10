@@ -28,7 +28,7 @@
 
 .color-form {
   background: #1f1e23;
-  padding: 100px 40px;
+  padding: 40px 30px 60px 30px;
   border-radius: 5px;
 }
 
@@ -53,6 +53,20 @@
   text-decoration: none;
   margin: 5px;
 }
+.register:hover {
+  color: #059a70;
+}
+
+.about-data {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.p-about {
+  font-weight: 300;
+  margin-top: 20px;
+}
 
 h1, p {
   color: white;
@@ -65,4 +79,21 @@ span {
 
 option {
   color: white;
+}
+
+.width {
+  width: 900px;
+}
+
+.left {
+    width: 10px;
+    height: 10px;
+    transition: .5s;
+    float: left;
+    box-shadow: -2px 2px 0 #00d698;
+    margin-top: 7px;
+}
+
+.left {
+    transform: rotate(45deg);
 }

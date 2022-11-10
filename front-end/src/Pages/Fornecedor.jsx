@@ -6,6 +6,7 @@ import MensagemErro from '../Components/MensagemErro';
 import { createUser } from '../Services';
 import MyContext from '../MyContext/MyContext';
 import { isValidName, isValidCnpj } from '../Util/Validacao';
+import AboutData from '../Components/AboutData';
 
 function Fornecedor() {
   const history = useNavigate();
@@ -40,7 +41,7 @@ function Fornecedor() {
 
   return (
     <main className="text-center morgin-auto">
-      <div className="row row-cols-1 row-cols-lg-2 m-2">
+      <div className="row row-cols-1 row-cols-lg-2 m-2 width">
         <div className="col">
           <p className="text-start">
             Cadastro de Usuário -
@@ -66,9 +67,8 @@ function Fornecedor() {
           </div>
         </div>
 
-        <div className="col border border-success">
-          <img src="#" alt="logo da empresa" />
-          <h1 className="fw-bolder">Crie seu Login na Plataforma</h1>
+        <div className="col">
+          <AboutData />
         </div>
       </div>
     </main>

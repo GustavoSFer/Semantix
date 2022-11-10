@@ -10,6 +10,7 @@ import {
   confirmPassword,
   isValidGroup,
 } from '../Util/Validacao';
+import AboutData from '../Components/AboutData';
 
 function Cadastro() {
   const history = useNavigate();
@@ -41,7 +42,7 @@ function Cadastro() {
 
   return (
     <main className="text-center morgin-auto">
-      <div className="row row-cols-1 row-cols-lg-2 m-2">
+      <div className="row row-cols-1 row-cols-lg-2 m-2 width">
         <div className="col">
           <p className="text-start">
             Cadastro de usuário -
@@ -97,8 +98,7 @@ function Cadastro() {
         </div>
 
         <div className="col fundo">
-          <img src="#" alt="logo da empresa" />
-          <h1 className="fw-bolder">Crie seu Login na Plataforma</h1>
+          <AboutData />
         </div>
       </div>
     </main>
