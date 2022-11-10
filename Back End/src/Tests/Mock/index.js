@@ -1,3 +1,8 @@
+const bodycreate = {
+  email: 'gusjtafdsd@gmail.coom',
+  password: '1sfds@'
+}
+
 const dataDb = [
   {
     "suprimentos": [],
@@ -58,4 +63,5 @@ const dataDb = [
 
 module.exports = {
   dataDb,
+  bodycreate,
 };

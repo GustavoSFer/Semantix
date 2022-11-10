@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const Sinon = require('sinon');
 const controller = require('../../Controller');
 const service = require('../../Service');
-const { dataDb } = require('../Mock');
+const { dataDb, bodycreate } = require('../Mock');
 
 describe('Controller', () => {
   const response = {};
@@ -25,5 +25,21 @@ describe('Controller', () => {
       await controller.getAll(request, response);
       expect(response.json.calledWith([])).to.be.equal(true);
     });  
+  });
+
+  describe("#Login", () => {
+    before(() => {
+      request.body = { bodycreate };
+      response.status = Sinon.stub().returns(response);
+      response.json = Sinon.stub().returns();
+    });
+    after(() => {
+      Sinon.restore();
+    });
+    // it('Verificando se é retornado o usuário ao tentar fazer login', async () => {
+    //   Sinon.stub(service, 'login').resolves(dataDb[0]);
+    //   await controller.login(request, response);
+    //   expect(response.status.calledWith(201)).to.be.equal(true);
+    // });
   });
 });
