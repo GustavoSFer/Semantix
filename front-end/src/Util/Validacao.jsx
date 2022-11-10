@@ -13,6 +13,8 @@ const isValidGroup = (grupo) => (grupo !== '' && grupo !== 'selecione');
 
 const isValidCnpj = (cnpj, minLength = 18) => (cnpj.length === minLength);
 
+const isValidCri = (cri) => !Number.isNaN(Number(cri));
+
 export {
   isValidEmail,
   isValidPassword,
@@ -20,4 +22,5 @@ export {
   confirmPassword,
   isValidGroup,
   isValidCnpj,
+  isValidCri,
 };

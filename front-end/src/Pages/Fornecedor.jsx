@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
-import { createUserProvider } from '../Services';
+import MensagemErro from '../Components/MensagemErro';
+import { createUser } from '../Services';
 import MyContext from '../MyContext/MyContext';
 import { isValidName, isValidCnpj } from '../Util/Validacao';
 
@@ -10,16 +11,15 @@ function Fornecedor() {
   const history = useNavigate();
   const [empresa, setEmpresa] = useState('');
   const [cnpj, setCnpj] = useState('');
-  const [msgErro, setMsgErro] = useState(false);
   const {
-    email, name, password, grupo, clearForm,
+    email, name, password, grupo, clearForm, msgErro, setMsgErro,
   } = useContext(MyContext);
 
   const cadastrar = async () => {
     const body = {
       email, name, password, grupo, empresa, cnpj,
     };
-    await createUserProvider('/provider', body);
+    await createUser('/provider', body);
     clearForm();
     setEmpresa('');
     setCnpj('');
@@ -61,10 +61,7 @@ function Fornecedor() {
               handleChange={(e) => setCnpj(e.target.value)}
               value={cnpj}
             />
-            {
-              msgErro
-                && <p className="text-danger">Dados incorreto! Verificar todos os campos.</p>
-            }
+            { msgErro && <MensagemErro /> }
             <Button click={handleClick} sty="w-100" dataTestId="btn-entrar">Cadastrar</Button>
           </div>
         </div>

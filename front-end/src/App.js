@@ -11,6 +11,8 @@ function App() {
   const [password, setPassword] = useState('');
   const [confirmePassword, setConfirmePassword] = useState('');
   const [grupo, setGrupo] = useState('');
+  const [msgErro, setMsgErro] = useState(false);
+
 
   const clearForm = () => {
     setEmail('');
@@ -28,6 +30,7 @@ function App() {
     confirmePassword, setConfirmePassword,
     grupo, setGrupo,
     clearForm,
+    msgErro, setMsgErro,
   };
 
   return (
