@@ -44,16 +44,16 @@ function Suprimentos() {
   // };
 
   return (
-    <main className="container text-center position-absolute top-50 start-50 translate-middle">
+    <main className="text-center morgin-auto">
       <div className="row row-cols-1 row-cols-lg-2 m-2">
-        <div className="col border border-primary">
+        <div className="col">
           <p className="text-start">
-            Cadastro de usuário -
+            Cadastro de Usuário -
             <span className="ms-1">Suprimentos</span>
           </p>
-          <div>
+          <div className="color-form">
             <h1>Crie sua conta</h1>
-            <select className="form-select mt-3" onChange={(e) => setSuprimento1(e.target.value)}>
+            <select className="form-select mt-3 ver" onChange={(e) => setSuprimento1(e.target.value)}>
               {
                 optionSuprimentos.map((item) => <option placeholder="Selecione os suprimentos" key={item}>{item}</option>)
               }
@@ -61,7 +61,7 @@ function Suprimentos() {
             {
               suprimento1 !== ''
                 && (
-                  <select className="form-select mt-3" onChange={(e) => setSuprimento2(e.target.value)}>
+                  <select className="form-select mt-3 ver" onChange={(e) => setSuprimento2(e.target.value)}>
                     {
                       optionSuprimentos.map((item) => <option placeholder="Selecione os suprimentos" key={item}>{item}</option>)
                     }
@@ -71,7 +71,7 @@ function Suprimentos() {
             {
             suprimento2 !== ''
               && (
-                <select className="form-select mt-3" onChange={(e) => setSuprimento3(e.target.value)}>
+                <select className="form-select mt-3 ver" onChange={(e) => setSuprimento3(e.target.value)}>
                   {
                     optionSuprimentos.map((item) => <option placeholder="Selecione os suprimentos" key={item}>{item}</option>)
                   }

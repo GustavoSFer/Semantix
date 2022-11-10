@@ -39,10 +39,30 @@
 
 .btn-cor {
   background-color: #00d698;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-cor:hover {
+  background-color: #059a70;
+  color: rgb(237, 234, 234);
 }
 
 .register {
   color: #00d698;
   text-decoration: none;
   margin: 5px;
+}
+
+h1, p {
+  color: white;
+  font-weight: 600;
+}
+
+span {
+  color: #00d698;
+}
+
+option {
+  color: white;
 }

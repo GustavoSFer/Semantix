@@ -40,14 +40,14 @@ function Cadastro() {
   };
 
   return (
-    <main className="container text-center position-absolute top-50 start-50 translate-middle">
+    <main className="text-center morgin-auto">
       <div className="row row-cols-1 row-cols-lg-2 m-2">
-        <div className="col border border-primary">
+        <div className="col">
           <p className="text-start">
             Cadastro de usuário -
-            <span className="ms-1">Padrão</span>
+            <span className="ms-1 grupo">Padrão</span>
           </p>
-          <div>
+          <div className="color-form">
             <h1>Crie sua conta</h1>
             <Input
               type="text"
@@ -80,7 +80,7 @@ function Cadastro() {
               value={confirmePassword}
             />
 
-            <select className="form-select mt-3" value={grupo} onChange={(e) => setGrupo(e.target.value)}>
+            <select className="form-select mt-3 ver" value={grupo} onChange={(e) => setGrupo(e.target.value)}>
               <option defaultValue="selecione">Seu grupo</option>
               <option value="fornecedor">Fornecedor</option>
               <option value="cozinheiro">Cozinheiro</option>
@@ -96,7 +96,7 @@ function Cadastro() {
           </div>
         </div>
 
-        <div className="col border border-success">
+        <div className="col fundo">
           <img src="#" alt="logo da empresa" />
           <h1 className="fw-bolder">Crie seu Login na Plataforma</h1>
         </div>
