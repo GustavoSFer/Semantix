@@ -14,7 +14,15 @@ const createUser = async (endpoint, body) => {
   return data;
 };
 
+const getGroup = async (endpoint, params) => {
+  console.log(`${baseURL}${endpoint}${params}`);
+  const { data } = await axios.get(`${baseURL}${endpoint}${params}`);
+  console.log('requisição>>   >>>', data);
+  return data;
+};
+
 export {
   loginUser,
   createUser,
+  getGroup,
 };

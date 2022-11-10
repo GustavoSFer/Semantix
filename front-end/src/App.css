@@ -75,14 +75,29 @@ h1, p {
 
 span {
   color: #00d698;
+  font-weight: 600;
 }
 
 option {
   color: white;
 }
 
+header {
+  height: 100px;
+  background: #121214;
+  border: 1px solid red;
+}
+
+.home {
+  background-color: #1f1e23;
+}
+
 .width {
   width: 900px;
+}
+
+.info {
+  width: 210px;
 }
 
 .left {
