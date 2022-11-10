@@ -18,16 +18,21 @@ function Suprimentos() {
   const [suprimento3, setSuprimento3] = useState('');
 
   const cadastrar = async () => {
-    const suprimentos = `${suprimento1} ${suprimento2} ${suprimento3}`;
-    const body = {
-      email, name, password, grupo, suprimentos,
-    };
-    await createUser('/supplies', body);
-    clearForm();
-    setSuprimento1('');
-    setSuprimento2('');
-    setSuprimento3('');
-    history('/home');
+    try {
+      const suprimentos = `${suprimento1} ${suprimento2} ${suprimento3}`;
+      const body = {
+        email, name, password, grupo, suprimentos,
+      };
+      const user = await createUser('/supplies', body);
+      clearForm();
+      setSuprimento1('');
+      setSuprimento2('');
+      setSuprimento3('');
+      history('/home');
+      localStorage.setItem('user', JSON.stringify(user));
+    } catch (error) {
+      setMsgErro(error.response.data.message);
+    }
   };
 
   const handleClick = () => {

@@ -16,13 +16,18 @@ function Cozinheiro() {
   const [cri, setCri] = useState('');
 
   const cadastrar = async () => {
-    const body = {
-      email, name, password, grupo, cri,
-    };
-    await createUser('/cooker', body);
-    clearForm();
-    setCri('');
-    history('/home');
+    try {
+      const body = {
+        email, name, password, grupo, cri,
+      };
+      const user = await createUser('/cooker', body);
+      clearForm();
+      setCri('');
+      history('/home');
+      localStorage.setItem('user', JSON.stringify(user));
+    } catch (error) {
+      setMsgErro(error.response.data.message);
+    }
   };
 
   const handleClick = () => {

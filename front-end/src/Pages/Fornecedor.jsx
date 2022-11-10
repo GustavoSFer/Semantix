@@ -17,14 +17,19 @@ function Fornecedor() {
   } = useContext(MyContext);
 
   const cadastrar = async () => {
-    const body = {
-      email, name, password, grupo, empresa, cnpj,
-    };
-    await createUser('/provider', body);
-    clearForm();
-    setEmpresa('');
-    setCnpj('');
-    history('/home');
+    try {
+      const body = {
+        email, name, password, grupo, empresa, cnpj,
+      };
+      const user = await createUser('/provider', body);
+      localStorage.setItem('user', JSON.stringify(user));
+      clearForm();
+      setEmpresa('');
+      setCnpj('');
+      history('/home');
+    } catch (error) {
+      setMsgErro(error.response.data.message);
+    }
   };
 
   const handleClick = () => {
