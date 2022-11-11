@@ -44,7 +44,7 @@ Usuários
     * npm run start:front (front-end)
   
   * Inicialize o projeto: `obs: antes de inicializar faça as configurações do banco`
-    * npm start - `Caso não abrir a pagina no nagevar, inicie separado`
+    * npm start - `Caso não abrir a página no navegador, inicie separado`
       * cd banck-end 
       ``` npm start```
       * cd front-end 
