@@ -63,6 +63,8 @@ onde /semantix é o nome da coleção no banco MongoDB.
 
 **⚠️ IMPORTANTE! ⚠️**
 
+
+**Este passo é obrigatório**
 Crie um arquivo na raiz do projeto de back-end chamado `secret.txt`, e informe uma senha, para que seja usado no token.
 
 Comando que pode utilizar pelo terminal:
