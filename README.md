@@ -15,7 +15,7 @@
 
 ## Objetivo do projeto:
   * Criar uma aplicação de gerenciamento de usuários.
-  * Tendo os casos de usos Gerenciamento de
+  * Tendo os casos de usos - Gerenciamento de
 Usuários
     <ul>
       <li>Cadastrar usuário.</li>
