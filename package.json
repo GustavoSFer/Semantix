@@ -10,7 +10,8 @@
     "install:back": "cd back-end && npm i",
     "install:front": "cd front-end && npm i",
     "install": "npm run install:back & install:front",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:back": "cd back-end && npm test",
+    "test:front": "cd front-end && npm test"
   },
   "repository": {
     "type": "git",
