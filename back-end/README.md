@@ -34,3 +34,14 @@ PORT=3001
 **⚠️ IMPORTANTE! ⚠️**
 
 Crie um arquivo na raiz do projeto chamado `secret.txt`, e informe uma senha, para que seja usado no token.
+
+## Utilizando o projeto com o Docker
+
+1. Crie a imagem no docker
+  * docker build -t <'NomeDaImagem'> <'LocalOndeEstaODockerFile'>
+  * Exemplo
+``` docker build -t semantix . ```
+2. Crie o container no docker
+  * docker container run -p 3001:3001 <'NomeDaImagem'>
+  * Exemplo
+``` docker container run -p 3001:3001 semantix ```
