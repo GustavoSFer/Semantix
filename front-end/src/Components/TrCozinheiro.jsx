@@ -12,7 +12,11 @@ function TrCozinheiro({ item }) {
 }
 
 TrCozinheiro.propTypes = {
-  item: PropTypes.arrayOf().isRequired,
+  item: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    cri: PropTypes.string,
+  }).isRequired,
 };
 
 export default TrCozinheiro;

@@ -29,7 +29,7 @@ function Home() {
   const listagem = (grupo) => {
     if (grupo === 'fornecedor') {
       return (
-        <table className="table table-dark border border-info rounded">
+        <table className="table table-dark border border-info width-table rounded">
           <thead>
             <tr className="table-active">
               <td>Nome</td>
@@ -49,7 +49,7 @@ function Home() {
     }
     if (grupo === 'cozinheiro') {
       return (
-        <table className="table table-dark border border-info rounded">
+        <table className="table table-dark border border-info width-table rounded">
           <thead>
             <tr className="table-active">
               <td>Nome</td>
@@ -67,7 +67,7 @@ function Home() {
       );
     }
     return (
-      <table className="table table-dark border border-info rounded">
+      <table className="table table-dark border border-info width-table rounded">
         <thead>
           <tr className="table-active">
             <td>Nome</td>

@@ -12,7 +12,11 @@ function TrSuprimentos({ item }) {
 }
 
 TrSuprimentos.propTypes = {
-  item: PropTypes.arrayOf().isRequired,
+  item: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    suprimentos: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
 };
 
 export default TrSuprimentos;

@@ -13,7 +13,12 @@ function TrFornecedor({ item }) {
 }
 
 TrFornecedor.propTypes = {
-  item: PropTypes.arrayOf().isRequired,
+  item: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    empresa: PropTypes.string,
+    cnpj: PropTypes.string,
+  }).isRequired,
 };
 
 export default TrFornecedor;
