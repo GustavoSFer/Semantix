@@ -50,5 +50,22 @@ describe('Model', () => {
       const data = await modelfind.getAllGrupo('suprimentos');
       expect(data).to.be.equal(grupoSuprimentos);
     });
+  });
+  describe('Retornando array vazio quando não tem dados.', () => {
+    it('buscando informações do grupo "Fornecedor"', async () => {
+      sinon.stub(model, 'find').resolves([]);
+      const data = await modelfind.getAllGrupo('fornecedor');
+      expect(data).to.be.empty;
+    });
+    it('buscando informações do grupo "Cozinheiro"', async () => {
+      sinon.stub(model, 'find').resolves([]);
+      const data = await modelfind.getAllGrupo('cozinheor');
+      expect(data).to.be.empty;
+    });
+    it('buscando informações do grupo "Suprimentos"', async () => {
+      sinon.stub(model, 'find').resolves([]);
+      const data = await modelfind.getAllGrupo('suprimentos');
+      expect(data).to.be.empty;
+    });
   })
 });

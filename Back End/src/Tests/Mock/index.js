@@ -167,10 +167,23 @@ const grupoSuprimentos = [
   }
 ];
 
+const resultProvider = {
+  suprimentos: [],
+  _id: 'new ObjectId("636ac7532d80f3d1f4527f75")',
+  name: 'teste',
+  email: 'gusjtafdsd@gmail.coom',
+  password: '1sfds@',
+  grupo: 'fornecedor',
+  empresa: 'digimatec',
+  cnpj: '20.123.443-87',
+  __v: 0
+};
+
 module.exports = {
   dataDb,
   bodycreate,
   grupoFornecedor,
   grupoCozinheiro,
   grupoSuprimentos,
+  resultProvider,
 };
