@@ -6,9 +6,11 @@ const supplies = require('../Controller/suppliesController');
 
 const route = Router();
 
-route.get('/', controller.login);
+route.get('/', controller.getAll);
+route.post('/loginUser', controller.login);
 route.post('/provider', provider.createProvider);
 route.post('/cooker', cooker.createCooker);
 route.post('/supplies', supplies.createSupplies);
+route.get('/user/:grupo', controller.getAllGrupo);
 
 module.exports = route;

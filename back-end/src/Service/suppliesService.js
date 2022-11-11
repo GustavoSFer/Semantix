@@ -13,7 +13,7 @@ const createSupplies = async (email, name, password, grupo, suprimentos) => {
     const supplies = await model.createSupplies(email, name, hashPassword, grupo, transformingToArray);
     
     const token = generateToken({ email, name, grupo });
-    delete supplies.password;
+    delete supplies._doc.password;
     return {...supplies._doc, token};
 
   } catch(e) {

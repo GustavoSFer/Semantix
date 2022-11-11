@@ -7,7 +7,7 @@ function Button({
   return (
     <button
       type="button"
-      className={`btn btn-danger mt-3 ${sty}`}
+      className={`btn btn-cor mt-3 ${sty}`}
       onClick={click}
       data-testid={dataTestId}
     >

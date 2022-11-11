@@ -12,7 +12,7 @@ const createCooker = async (email, name, password, grupo, cri) => {
     const cooker = await model.createCooker(email, name, hashPassword, grupo, cri);
     
     const token = generateToken({ email, name, grupo });
-    delete cooker.password;
+    delete cooker._doc.password;
     return {...cooker._doc, token};
 
   } catch(e) {
