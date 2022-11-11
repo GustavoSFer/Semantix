@@ -1,5 +1,5 @@
 const bodycreate = {
-  email: 'gusjtafdsd@gmail.coom',
+  email: 'gustavo@gmail.coom',
   password: '1sfds@'
 }
 
@@ -8,7 +8,7 @@ const dataDb = [
     "suprimentos": [],
     "_id": "636ac7532d80f3d1f4527f75",
     "name": "teste",
-    "email": "gusjtafdsd@gmail.coom",
+    "email": "gustavo@gmail.coom",
     "password": "1sfds@",
     "grupo": "fornecedor",
     "empresa": "digimatec",
@@ -19,7 +19,7 @@ const dataDb = [
     "suprimentos": [],
     "_id": "636aca1eb7f60e99caaba3a2",
     "name": "teste",
-    "email": "gusjtafdsd@gmail.coom",
+    "email": "teste@gmail.com",
     "password": "1sfds@",
     "grupo": "fornecedor",
     "empresa": "digimatec",
@@ -30,7 +30,7 @@ const dataDb = [
     "suprimentos": [],
     "_id": "636acda341e5de8b9a411d0b",
     "name": "teste",
-    "email": "gusjtafdsd@gmail.coom",
+    "email": "teste@gmail.com",
     "password": "1sfds@",
     "grupo": "fornecedor",
     "empresa": "digimatec",
@@ -41,7 +41,7 @@ const dataDb = [
     "suprimentos": [],
     "_id": "636ace50c3a4314f1cc578a7",
     "name": "teste",
-    "email": "gusjtafdsd@gmail.coom",
+    "email": "teste@gmail.com",
     "password": "973c7c2505b1024e264e88508489d286",
     "grupo": "fornecedor",
     "empresa": "digimatec",
@@ -52,7 +52,7 @@ const dataDb = [
     "suprimentos": [],
     "_id": "636ad02e7ba3d9fdcdc4dc47",
     "name": "teste",
-    "email": "gusjtafdsd@gmail.coom",
+    "email": "teste@gmail.com",
     "password": "ebddb79d7d84442f719ca85b9804eb13",
     "grupo": "fornecedor",
     "empresa": "digimatec",

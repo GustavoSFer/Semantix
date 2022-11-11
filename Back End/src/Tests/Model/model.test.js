@@ -18,4 +18,12 @@ describe('Model', () => {
       expect(data).to.be.empty;
     });
   });
+
+  describe('Login', () => {
+    it('Realizando login com usuario', async () => {
+      sinon.stub(model, 'findOne').resolves(dataDb[0]);
+      const data = await modelfind.login('gustavo@gmail.com');
+      expect(data).to.be.equal(dataDb[0]);
+    });
+  });
 });
