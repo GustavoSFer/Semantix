@@ -2,7 +2,7 @@ const model = require('../ConnectionMongo');
 
 const login = async (email) => {
   const user = await model.findOne({ email });
-
+  
   return user;
 };
 

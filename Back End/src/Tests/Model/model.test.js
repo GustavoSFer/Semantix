@@ -20,10 +20,15 @@ describe('Model', () => {
   });
 
   describe('Login', () => {
-    it('Realizando login com usuario', async () => {
+    it('Realizando login com usuário', async () => {
       sinon.stub(model, 'findOne').resolves(dataDb[0]);
       const data = await modelfind.login('gustavo@gmail.com');
       expect(data).to.be.equal(dataDb[0]);
+    });
+    it('usuario não existente retorna "null"', async () => {
+      sinon.stub(model, 'findOne').resolves(null);
+      const data = await modelfind.login('pedro@gmail.com');
+      expect(data).to.be.equal(null);
     });
   });
 });
